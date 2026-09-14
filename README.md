@@ -52,9 +52,11 @@ App: http://localhost:3001
 | --- | --- |
 | Admin API | 3002 |
 | Admin UI | 3001 |
-| Postgres | 5436 |
+| Postgres (shared with User API) | 5434 |
 
-> If `3000` / `5434` are already used by the User API project, this repo uses `3002` / `5436` so both can run side by side. Schema for `users` matches the User API.
+This admin app connects to the **same** Postgres as [`waow-backend-task`](https://github.com/souksanDev1/waow-backend-task) (`waow_backend` on `5434`). It reuses the existing `users` table and adds `roles` / `admins`.
+
+`docker compose` in this repo (port `5436`) is only a fallback if you need a private DB; default `.env` points at `5434`.
 
 ## API base
 

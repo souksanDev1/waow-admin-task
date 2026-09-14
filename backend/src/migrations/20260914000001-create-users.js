@@ -3,6 +3,13 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
+    const tables = await queryInterface.showAllTables();
+    const normalized = tables.map((t) => (typeof t === 'string' ? t : t.tableName || t));
+    if (normalized.includes('users')) {
+      // Shared User API database already has this table.
+      return;
+    }
+
     await queryInterface.createTable('users', {
       id: {
         type: Sequelize.INTEGER,
@@ -36,7 +43,7 @@ module.exports = {
     });
   },
 
-  async down(queryInterface) {
-    await queryInterface.dropTable('users');
+  async down() {
+    // Do not drop shared `users` table from the User API database.
   },
 };
