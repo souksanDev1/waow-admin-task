@@ -78,5 +78,6 @@ Response envelope:
 
 ## Docs
 
+- User guide: [`USER-GUIDE.md`](./USER-GUIDE.md)
 - Design: `docs/superpowers/specs/2026-09-14-waow-admin-design.md`
 - Plan: `docs/superpowers/plans/2026-09-14-waow-admin-implementation.md`
