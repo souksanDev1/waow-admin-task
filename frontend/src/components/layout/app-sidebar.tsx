@@ -33,8 +33,7 @@ export function AppSidebar() {
   return (
     <aside className="flex w-60 shrink-0 flex-col border-r border-zinc-200 bg-zinc-950 text-zinc-100">
       <div className="border-b border-zinc-800 px-5 py-5">
-        <p className="text-xs uppercase tracking-[0.2em] text-zinc-400">Waow</p>
-        <h1 className="mt-1 text-lg font-semibold tracking-tight">Admin Console</h1>
+        <h1 className="text-2xl font-semibold tracking-tight text-zinc-50">Waow</h1>
         {admin ? (
           <p className="mt-2 truncate text-sm text-zinc-400">
             {admin.username} · {admin.roleName}
